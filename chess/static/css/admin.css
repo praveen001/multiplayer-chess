@@ -1,0 +1,305 @@
+/* Chess */
+
+.promotion {
+	position:absolute;
+	width:300px;
+	height:300px;
+	z-index:100;
+	background-color:#fff;
+	padding:10px;
+	border:1px solid #222;
+	border-radius:10px;
+	display:none;
+}
+
+.promotion h1 {
+	font-family: custo-thin;
+	font-size: 25px;
+	text-align: center;
+	margin:0px;
+	padding:0px;
+}
+
+.promotion p {
+	display:block;
+	width:100%;
+	margin:0px;
+	padding:0px;
+	font: 300 custo-thin 16px;
+	color:#000;
+}
+
+.promotion img {
+	width:40px;
+	height:40px;
+	position:relative;
+	top:10px;
+}
+
+/* End of Chess */
+
+body, div {
+	margin:0px;
+	padding:0px;
+}
+
+.cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+  clear: both;
+}
+
+/**
+* For IE 6/7 only
+* Include this rule to trigger hasLayout and contain floats.
+*/
+.cf {
+  *zoom: 1;
+}
+
+/* Login Form */
+
+.wrapper {
+	height:100%;
+	width:100%;
+	position:fixed;
+	overflow-y:scroll;
+	background-color:#000;
+}
+
+.loginform {
+	margin: 0px;
+	padding: 10px;
+	width:400px;
+	background-color:#2288FF;
+	position:absolute;
+}
+
+.loginform h1 {
+	font:300 35px custo-thin;
+	color:#fff;
+	text-align:center;
+	margin:0px;
+}
+
+.loginform p, pre {
+	width:90%;
+	margin:10px auto;
+	text-align:center;
+}
+
+pre {
+    white-space: pre-wrap;       /* CSS 3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+	text-align:left;
+	background:transparent !important;
+	font:300 24px custo-thin !important;
+}
+
+/* End Of Login Form */
+
+/* Admin Home */
+
+.col1 p, .col2 p, .col3 p, .col4 p {
+	display:block;
+	border-bottom:1px solid #333;
+	font:14px Arial;
+	text-align:center;
+	padding:0px;
+	margin:3px 0px;
+}
+
+.col1, .col2, .col3, .col4 {
+	float:left;
+	border:1px solid #333;
+	padding:0px;
+}
+
+.col1, .col3 {
+	width:20px;
+}	
+
+.col2, .col4 {
+	width: 60px;
+}
+
+.colleft {
+	width:20%;
+	background-color:#fff;
+	float:left;
+}
+
+.left {
+	width:24%;
+	float:left;
+	padding:0px 1%;
+	color: #fff !important;
+}
+
+.left b {
+	margin:0px 0px 20px 10px;
+	display:block;
+	font:300 16px custo-thin !important;
+}
+
+.center {
+	width:auto;
+	margin:20px auto;
+	
+	padding:10px;
+	border-radius:10px;
+}
+
+.colright {
+	width:80%;
+	background-color:#2299FF;
+	height:auto;
+	float:left;
+}
+
+.right {
+	width:45%;
+	float:left;
+	padding:0px 2%;
+	text-align:center;
+}
+
+
+.right h5, .leaderboard h5 {
+	font:300 26px custo-thin;
+	color:#fff;
+}
+
+.colleft ul, .left ul {
+	list-style:none;
+	margin:0px;
+	padding:0px;
+}
+
+.colleft ul li, .left ul li {
+	display:block;
+}
+
+.colleft ul li a {
+	display:block;
+	font:300 16px custo-thin;
+	padding:5px;
+	text-indent:10px;
+	color:#000;
+	text-decoration:none;
+	margin:0px;
+	cursor:pointer;
+}
+
+.colleft ul li a:hover {
+	background-color:#2299FF;
+}
+
+.colleft ul p, pre {
+	text-indent:5px;
+	font:300 18px custo-thin;
+	display:block;
+	background-color:#222;
+	color:#fff;
+	padding:5px;
+	margin:0px 0px 4px 0px;
+}
+
+.Q {
+	color:#fff !important;
+}
+
+/* End Of Admin Home */
+	
+
+/* Add Questions */
+
+.colright .rightWrap, colcenter .rightWrap {
+	margin-left:5%;
+	width:45%;
+}	
+
+.colright h1, colcenter h1 {
+	color:#fff;
+	font:300 30px custo-thin;
+	text-indent:20px;
+}
+
+.colright p, .colcenter p, p{
+	color:#fff;
+	font:300 22px custo-thin;
+}
+
+.colright textarea, .colcenter textarea {
+	height:100px;
+	font:300 16px custo-thin;
+}
+
+.colcenter {
+	width:30% !important;
+	margin:0 auto;
+}
+
+/* End Of Add Questions */
+
+/* View Participants */
+
+.teams {
+	background:transparent;
+	width:100%;
+	margin:10px 0px;
+}
+
+.questions span {
+	width:12% !important;
+}
+
+.teams span {
+	float:left;
+	width:16%;
+	box-shadow:0px 0px 1px #FFF;
+}
+
+.teams span p, .teams span a {
+	margin:0px;
+	padding:5px;
+	font:300 18px custo-thin;
+	color:#fff;
+}
+
+.leaderboard {
+	
+}
+
+.leaderboard h5 {
+	margin:5px 5px 5px 5px;
+}
+
+
+.leaderboard ul {
+	list-style:none;
+	padding:0px;
+	margin:0 20px;
+	width:80%;
+}
+
+.leaderboard li {
+	padding:0px;
+	margin:0px;
+	color:#fff;
+	font:300 16px custo-thin;
+	border-bottom:1px solid #ccc;
+}
+
+.leaderboard_teams {
+	float:left;
+}
+
+.leaderboard_points {
+	float:right;
+}
+
+/* End Of View Participants */

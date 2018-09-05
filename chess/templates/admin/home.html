@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+
+<head>	
+		<script type="text/javascript" src="/static/js/jquery.js"></script>
+	<script type="text/javascript">
+		var socket;
+		$(document).ready(function() {
+			socket = new WebSocket("ws://" + window.location.hostname + ":8080/socket?id=admin");
+			$(window).on('beforeunload', function(){
+			    socket.close();
+			});
+		});
+	</script>
+	<link rel="stylesheet" type="text/css" href="/static/css/component.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/admin.css" />
+
+
+	<script type="text/javascript" src="/static/js/socket.js"></script>
+	<script type="text/javascript" src="/static/js/admin.js"></script>
+	<script type="text/javascript" src="/static/js/script.js"></script>
+</head>
+<body>
+	<div class="colleft">
+		<ul>
+			<p>Participants</p>
+			<li><a href="/admin/view-participants/">View Participants</a></li>
+			<li><a href="/admin/add-participant/">Add Participant</a></li>
+			<p>Chess</p>
+			<li><a href="/admin/custom-match/">Custom Match</a></li>
+			<li><a href="/admin/game-list/">Game List</a></li>
+			<p>Account</p>
+			<li><a href="/admin/logout/">Logout</a></li>
+		</ul>
+	</div>
+
+	<div class="colright">
+		<p>Total Participants = {{ participants|length }}</p>
+		<br />
+		{% block content %} 
+		
+		{% endblock %}
+		
+	</div>
+</body>
+
+</html>

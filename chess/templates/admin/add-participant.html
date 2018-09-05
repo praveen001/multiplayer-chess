@@ -1,0 +1,20 @@
+{% extends "admin/home.html" %}
+
+{% block content %}
+<h1>Add Participant</h1>
+<div class="rightWrap">
+	<form action="/ajax/add/participant/" method="post" class="ajaxForms">
+		<p>Username: <input type="text" name="username" placeholder="Username" class="flatTextbox" /></p>
+		<p>Name:<input type="text" name="name" placeholder="Name" class="flatTextbox" /></p>
+		<p>Password:<input type="password" name="password" placeholder="Password" class="flatTextbox" /></p>
+		<p>Email:<input type="text" name="email" placeholder="Email" class="flatTextbox" /></p>
+		<p>School/College: <input type="text" name="college" placeholder="College" class="flatTextbox" /></p>
+		<p>Rating: <input type="text" name="college" placeholder="College" class="flatTextbox" /></p>
+		<p>Round: <input type="text" name="round" placeholder="Round" class="flatTextbox" /></p>
+		<p>Eliminated: <input type="text" name="eliminated" placeholder="Eliminated" class="flatTextbox" /></p>					
+		<p>Points: <input type="text" name="points" placeholder="Points" class="flatTextbox" /></p>
+		<p><input type="submit" name="add-participant" value="Add Participant" class="flatButton green" /></p>
+	</form>
+</div>
+{% endblock %}
+

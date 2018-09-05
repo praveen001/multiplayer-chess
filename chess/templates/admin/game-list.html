@@ -1,0 +1,32 @@
+{% extends "admin/home.html" %}
+{% load custom_filters %}
+
+{% block content %}
+<h1>Game List</h1>
+<div class="rightWrap" style="width:80%;">
+	<form action="" method="POST">
+		{% csrf_token %}
+		<p>Round No: <br /><input type="text" name="roundno" placeholder="Round Number" class="flatTextbox" /></p>
+		<p><input type="submit" name="pair" value="Get Games" class="flatButton green" /></p>
+	</form>
+	<hr />
+	<p>Master IP: <input type="text" name="master" placeholder="127.0.0.1" /></p>
+	<p>Total Games = {{ games|length }}</p>
+	{% for g in games reversed %}
+		<div style="width:100%;">
+		<p style="float:left;padding:0px;margin:0px;width:12%">{{ g.user1|getNameById }}</p>
+		<p style="float:left;margin:0px;width:5%">vs</p> 
+		<p style="float:left;padding:0px;margin:0px;width:12%">{{ g.user2|getNameById }}</p>
+		<p style="float:left;padding:0px;margin:0px;width:10%">{{ g.status }}</p>
+		<p style="float:left;padding:0px;margin:0px;width:10%">{{ g.winner }}</p>
+		<p style="float:left;padding:0px;margin:0px;width:15%"><input type="button" class="reportgame flatButton green" data-json="{{ g|parse }}" value="Report Game" /></p>
+		<p style="float:left;padding:0px;margin:0px;width:15%"><input type="button" class="gamedetails flatButton violet" value="View Details" data-gameid="{{ g.id }}" /></p>
+		<p style="float:left;padding:0px;margin:0px;width:15%"><input type="button" class="deletegame flatButton red" value="Delete Game" data-gameid="{{ g.id }}" /></p>
+		</div>
+	{% empty %}
+		<p>No games availabe</p>
+	{% endfor %}
+
+</div>
+{% endblock %}
+

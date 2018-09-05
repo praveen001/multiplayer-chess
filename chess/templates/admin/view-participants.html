@@ -1,0 +1,40 @@
+{% extends "admin/home.html" %}
+
+{% block content %}
+<h1>Teams List</h1>
+
+<p>Total No.of Participants = {{ participants|length }}</p>
+
+<div class="teams cf">
+	<span><p>User Name</p></span>
+	<span><p>Name</p></span>
+	<span><p>Email</p></span>
+	<span><p>School</p></span>
+	<span><p>Options</p></span>
+</div>
+
+{% for t in participants %}
+	<div class="teams cf quick">
+		<span>
+			<p>{{ t.username }}</p>
+		</span>
+		
+		<span>
+			<p>{{ t.name }}</p>
+		</span>
+		<span>
+			<p>{{ t.email }}</p>
+		</span>
+		<span>
+			<p>{{ t.college }}</p>
+		</span>
+		<span>
+			<p><a href="/admin/edit-participant/{{ t.id }}/">Edit</a><a href="/admin/remove-participant/{{ t.id }}/">Delete</a></p>
+		</span>
+	</div>
+
+	
+{% endfor %}
+
+{% endblock %}
+

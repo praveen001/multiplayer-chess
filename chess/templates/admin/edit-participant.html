@@ -1,0 +1,25 @@
+{% extends "admin/home.html" %}
+
+{% block content %}
+
+<div class="teams cf">
+		<form action="/ajax/edit/participant/{{ participant.id }}/" method="post" class="ajaxForms">	
+		<p>Participant Details:</p>
+
+		<p>Username:<input type="text" name="username" placeholder="User Name" class="flatTextbox" value="{{ participant.username }}" /></p>
+
+		<p>Name: <input type="text" name="name" placeholder="Name" class="flatTextbox" value="{{ participant.name }}" /></p>
+		<p>Password: <input type="text" name="password" placeholder="Password" class="flatTextbox" value="{{ participant.password }}" /></p>
+		<p>Email: <input type="text" name="email" placeholder="Email" class="flatTextbox" value="{{ participant.email }}" /></p>
+			
+		<p>School: <input type="text" name="college" placeholder="School/College" class="flatTextbox" value="{{ participant.college }}" /></p>
+		<p>Rating: <input type="text" name="rating" placeholder="Rating" class="flatTextbox" value="{{ participant.rating }}" /></p>
+		<p>Round: <input type="text" name="round" placeholder="Round" class="flatTextbox" value="{{ participant.cround }}" /></p>
+		<p>Eliminated: <input type="text" name="eliminated" placeholder="Eliminated" class="flatTextbox" value="{{ participant.eliminated }}" /></p>
+		<p>Points: <input type="text" name="points" placeholder="Points" class="flatTextbox" value="{{ participant.points }}" /></p>
+		
+		<p><input type="submit" name="add-participant" value="Save" class="flatButton green" /></p>
+	</form>
+</div>
+{% endblock %}
+

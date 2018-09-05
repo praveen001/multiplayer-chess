@@ -1,0 +1,22 @@
+{% extends "admin/home.html" %}
+
+{% block content %}
+<h1>Start Custom Match</h1>
+<div class="rightWrap">
+	<form action="/ajax/game/create/" method="post" class="ajaxForms">
+		<p><input type="text" name="username1" placeholder="Username" class="flatTextbox checkOnline" /></p> 
+		<p style="text-align:center;">Vs</p>
+		<p><input type="text" name="username2" placeholder="Username" class="flatTextbox checkOnline" /></p>
+		<p><input type="text" name="roundno" placeholder="Round" class="flatTextbox" /></p>
+		<p><input type="submit" name="start-custom-match" value="Start Game" class="flatButton green" /></p>
+	</form>
+
+	<h1>Redirect</h1>
+	<form action="/ajax/redirect" method="post" class="redirectForm">
+		<p><input type="text" name="redirectuser" placeholder="Username" class="flatTextbox" /></p>
+		<p><input type="text" name="ip" placeholder="192.168.1.1" class="flatTextbox" /></p>
+		<p><input type="submit" name="redirect" value="Start Game" class="flatButton green" /></p>
+	</form>
+</div>
+{% endblock %}
+

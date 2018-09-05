@@ -1,0 +1,145 @@
+@font-face {
+font-family: HeadingFont;
+src: url('/static/fonts/SkarpaLt.ttf');
+/*     url('Sansation_Light.eot');  IE9 */
+} 
+
+@font-face {
+	font-family:custo;
+	src: url('/static/fonts/custo.woff') format('woff');
+}
+
+@font-face {
+	font-family:custo-thin;
+	src: url('/static/fonts/custo-thin.woff') format('woff');
+}
+
+.flatButton {
+	display:block;
+	padding:10px;
+	min-width:80px;
+	width:auto;
+	text-align:center;
+	color:#fff;
+	text-decoration:none;
+	font-size:15px;
+	border:0px;
+	cursor:pointer;
+	margin:2px;
+}
+
+.violet {
+	background-color:#6644EE;
+}
+
+.black { 
+	background-color:#000;
+	color:#fff;
+}
+
+.blue {
+	background-color:#2244FF;
+}
+
+.red {
+	background-color:#CC5544;
+	color:#fff !important;
+	font-size:16px !important;
+}
+
+.lightgreen {
+	background-color:#88EE88;
+}
+
+.green {
+	background-color:#00BB44;
+}
+
+.white {
+	background-color:#eeeeee;
+	color:#333;
+}
+
+.pureWhite {
+	background-color:#fff;
+	color:#333;
+}
+
+a.block:hover, input.block:hover {
+	background-color:#999;
+}
+
+a.violet:hover, input.violet:hover {
+	background-color:#6655FF;
+}
+
+a.blue:hover, input.blue:hover {
+	background-color:#2222FF;
+}
+
+a.red:hover, input.red:hover {
+	background-color:#BB4444;
+}
+
+a.green:hover, input.green:hover {
+	background-color:#009944;
+}
+
+a.white:hover, input.white:hover {
+	background-color:#cccccc;
+}
+
+.flatTextbox {
+	display:block;
+	border:0px; 
+	height:35px;
+	background:#eee;
+	border:1px solid #eee;
+	padding:0px 0px 0px 5px;
+	color:#222;
+	width:100%;
+}
+
+.flatTextbox:focus {
+	background:#fff;
+	border:1px solid #888;
+}
+
+.error, .success {
+	display:block;
+	height:auto;
+	min-width:100%;
+	border:1px solid #AA2222;
+	background:#CC4444;
+	margin:0px !important;
+	padding:3px 3px;
+	color:#000 !important;
+}
+
+.error ul, .success ul { 
+	margin:0px !important;
+	color:#333;
+	font-size:13px;
+	list-style:none;
+	padding:0px;
+	margin:0px;
+}
+
+.success {
+	background:#77CC77;
+	border:1px solid #22AA22;
+}
+
+.imageUploadButton {
+	float: left !important;
+	padding: 10px !important;
+	color: #fff !important;
+	font: 300 15px custo-thin;
+	margin: 10px;
+}
+
+.imageUploadDescription {
+	float: left !important;
+	margin: 8px 0px;
+	font: 300 14px custo-thin;
+}

@@ -1,0 +1,44 @@
+{% extends "admin/home.html" %}
+{% load custom_filters %}
+
+{% block content %}
+<h1>Swiss Pairing</h1>
+<div class="rightWrap">
+	<p><input type="button" value="Refresh All" class="flatButton red refresh" /></p>
+	<form action="" method="POST">
+		{% csrf_token %}
+		<p>Round No: <br /><input type="text" name="roundno" placeholder="Round Number" class="flatTextbox" /></p>
+		<p><input type="submit" name="pair" value="Get Pairs" class="flatButton green" /></p>
+	</form>
+	<hr />
+	{% for p in pairs %}
+		<p style="float:left;padding:0px;width:45%;border:1px solid #fff;margin:2px;">{{ p.user1|getNameById }}({{p.user1|getRatingById }}) {{p.user1|getPointsById|floatformat:1}} </p>
+		<p style="float:left;padding:0px;width:45%;border:1px solid #fff;margin:2px;">{{ p.user2|getNameById }}({{p.user2|getRatingById }}) {{p.user2|getPointsById|floatformat:1}} </p>
+	{% empty %}
+		{% for p in participants %}
+			<p style="float:left;padding:0px;width:45%;border:1px solid #fff;margin:2px;">{{ p.name }}({{p.rating}}) {{p.points|floatformat:1}} </p>
+		{% empty %}
+			<p>No pairs availabe</p>
+		{% endfor %}
+		{% ifnotequal participants|length 0 %}
+		<div>
+		<form action="/admin/pair/" method="post">
+			{% csrf_token %}
+			<input type="hidden" name="roundno2" value="{{ roundno }}" />
+			<p><input type="submit" name="pair2" value="Pair" class="flatButton green" /></p>
+		</form>
+		</div>
+		{% endifnotequal %}
+	{% endfor %}
+	{% ifnotequal pairs|length 0 %}
+		<div>
+		<form action="/admin/pair/" method="post">
+			{% csrf_token %}
+			<input type="hidden" name="roundno2" value="{{ roundno }}" />
+			<p><input type="submit" name="pair2" value="Pair" class="flatButton green" /></p>
+		</form>
+		</div>
+	{% endifnotequal %}
+</div>
+{% endblock %}
+

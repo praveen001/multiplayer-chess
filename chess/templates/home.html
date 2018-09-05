@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="/static/css/component.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/admin.css" />
+	<script type="text/javascript" src="/static/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/js/admin.js"></script>
+	
+	<style>
+		body {
+			width:100%;
+			height:100%;
+			  background: url(/static/img/bg.jpg) no-repeat center center fixed; 
+			  -webkit-background-size: cover;
+			  -moz-background-size: cover;
+			  -o-background-size: cover;
+			  background-size: cover;
+		}
+
+		.wrapper {
+			background:rgba(0, 0, 0, 0.6);
+		}
+
+		.flatTextbox {
+			width:100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<!--<img src="/static/images/logo.png" style="display:block;margin:0 auto;" />-->
+		{% if error %}
+			<p class="error">{{error}}</p>
+		{% endif %}	
+		{% block content %}
+			
+			<form action="/" method="post">	
+				<div class="colcenter">
+					{% csrf_token %}
+					<p>User Name: <input type="text" name="username" placeholder="User Name" class="flatTextbox" /></p>
+					<p>Password: <input type="password" name="password" placeholder="Password" class="flatTextbox" /></p>
+				</div>
+				
+				<div class="colcenter" style="clear:both; text-align:center;margin:25px auto;">
+					<p style="text-align:center;margin:0 auto;"><input style="margin:0 auto;padding:7px 25px;font:300 20px custo-thin;border-radius:5px;" type="submit" name="Login" value="Login" class="flatButton green" /></p>
+				</div>
+			</form>
+		{% endblock %}
+	</div>
+</body>
+
+</html>
+

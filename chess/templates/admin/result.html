@@ -1,0 +1,12 @@
+{% extends "admin/home.html" %}
+
+{% block content %}
+<h1>Add Participant</h1>
+<div class="rightWrap">
+	<h1>Results</h1>
+	{% for r in results %}
+		<p>{{ r.user1 }} vs {{ r.user2 }} - - {{ r.result }}</p>
+	{% endfor %}
+</div>
+{% endblock %}
+

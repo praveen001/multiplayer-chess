@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+
+<head>
+	<script type="text/javascript" src="/static/js/jquery.js"></script>
+	<script type="text/javascript">	
+		var socket;
+		$(document).ready(function(){
+			socket = new WebSocket("ws://" + window.location.hostname + ":8080/socket?id={{ user.id }}");
+		});
+		$(window).on('beforeunload', function(){
+		    socket.close();
+		});
+	</script>
+	<link rel="stylesheet" type="text/css" href="/static/css/component.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/admin.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/chessboard.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/flipclock.css" />
+	<script type="text/javascript" src="/static/js/admin.js"></script>
+	<script type="text/javascript" src="/static/js/chessboard.js"></script>
+	<script type="text/javascript" src="/static/js/chess.js"></script>
+	<script type="text/javascript" src="/static/js/flipclock.js"></script>
+<!--	<script type="text/javascript" src="/static/js/cinnamon_engine_1_2b.js"></script>
+	<script type="text/javascript" src="/static/js/cinnamon.js"></script>-->
+	<script type="text/javascript" src="/static/js/script.js"></script>
+	<style>
+		body {
+			width:100%;
+			height:100%;
+			  background: url(/static/img/bg.jpg) no-repeat center center fixed; 
+			  -webkit-background-size: cover;
+			  -moz-background-size: cover;
+			  -o-background-size: cover;
+			  background-size: cover;
+		}
+
+		.wrapper {
+			background:rgba(0, 0, 0, 0.9);
+		}
+
+		.flatTextbox {
+			width:100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="promotion">
+		<h1>Pawn Promotion</h1>
+		<p>Choose your piece</p>
+		<form action="" method="POST">
+			<p><input type="radio" checked value="q" name="promotion" /><img src="/static/img/chess/wQ.png" /><p>
+			<p><input type="radio" name="promotion" value="r" /><img src="/static/img/chess/wR.png" /><p>
+			<p><input type="radio" name="promotion" value="n" /><img src="/static/img/chess/wN.png" /><p>
+			<p><input type="radio" name="promotion" value="b" /><img src="/static/img/chess/wB.png" /><p>
+`			<p><input type="submit" name="pawn_promotion" class="flatTextbox green" value="Promote" /><p>
+		</form>
+	</div>
+	<div class="wrapper">
+		<!--<img src="/static/images/logo.png" style="display:block;margin:0 auto;" />-->
+		{% if error %}
+			<p class="error">{{error}}</p>
+		{% endif %}	
+		{% block content %}
+			<div class = "left">
+			<p class="touchpiece">Touch piece = </p>
+			<pre>  </pre>
+			<hr />
+			<p style="margin:0px;padding:0px;">White's Timer</p>
+			<hr />
+				<b class="willegal">Illegal Moves : 0</b>
+				<div class="wclock" style="margin:0em;"></div><hr />
+			<br /><br /><br /><br />
+			<hr />
+			<p style="margin:0px;padding:0px;">Black's Timer</p><hr />
+				<b class="billegal">Illegal Moves : 0</b>
+				<div class="bclock" style="margin:0em;"></div>
+			<hr />
+			</div>
+			<div class="right">
+				<p style="margin:0px;padding:6.5px;" class="status">Please wait for the game to begin</p><hr />
+				<div id="board1" style="width: 600px" style="float:left;"></div>
+			</div>
+			<div id="left" style="float:left;width:180px;">
+					<p>Moves:</p>
+					<div class="col1">
+						<p>0</p>
+					</div>
+					<div class="col2">
+						<p>White</p>
+					</div>
+					<div class="col3">
+						<p>0</p>
+					</div>
+					<div class="col4">
+						<p>Black</p>
+					</div>
+					<b class="fen"></b>
+				</div>
+		{% endblock %}
+	</div>
+</body>
+
+</html>
+
